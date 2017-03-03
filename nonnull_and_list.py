@@ -43,6 +43,6 @@ app.add_url_rule("/", view_func=GraphQLView.as_view('graphql', schema=graphene.S
 
 
 if __name__ == '__main__':
-    # curl -H 'Content-type: application/graphql' -d 'query {resp {id, name, age, now}}' http://localhost:5000/
-    # {"data":{"resp":{"id":"1","name":"foo","age":111, "now": "2017-03-03T14:58:50.844666"}}}
+    # curl -H 'Content-type: application/graphql' -d 'query {resp {id, name, age, now, friends}}' http://localhost:5000/
+    # {"data":{"resp":{"id":"1","name":"foo","age":111, "now": "2017-03-03T14:58:50.844666", ["John", "Jane", "Smith"]}}}
     app.run()
